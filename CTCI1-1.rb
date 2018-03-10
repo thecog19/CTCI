@@ -10,9 +10,13 @@ def unique_chars(str)
 	end
 	return true
 end
+p "---------------"
+
 p "unique_chars"
 p unique_chars("this")
 p unique_chars("that")
+p "---------------"
+
 
 def unique_chars_arr_only(str)
 	pseudo_hash = []
@@ -36,10 +40,14 @@ def permutation_finder(str1, str2)
 	s_str2 = str2.chars.sort.join
 	s_str1 == s_str2
 end
+p "---------------"
+
 p"permutation_finder"
 
 p permutation_finder("thisstr", "rtssiht")
 p permutation_finder("potato", "unicorn")
+p "---------------"
+
 
 def urlify(str)
 	str.strip.split(" ").join("%20")
@@ -68,10 +76,12 @@ def palindrome_permuter(str)
 	end
 	return true
 end
+p "---------------"
 p "palindrome_permuter"
 p palindrome_permuter("add dda")
 p palindrome_permuter("atco cta")
 p palindrome_permuter("red")
+p "---------------"
 
 def char_counter(str)
 	str_arr = str.split(" ").join("").split("")
@@ -113,11 +123,14 @@ def one_replacement(str1, str2)
 	end
 	return true
 end
+
+p "---------------"
 p "one replacement"
 p one_away("pale", "ple")
 p one_away("pales", "pale")
 p one_away("pale", "bale")
 p one_away("pale", "bake")
+p "---------------"
 
 def string_compressor(str)
 	str_arr = str.split("")
@@ -143,18 +156,29 @@ def string_compressor(str)
 	gen_str
 end
 
+p "---------------"
 p "string_compressor"
 p string_compressor("aabcccccaaa")
 p string_compressor("ab")
-
+p "---------------"
 #wtf 
 
 def rotate_matrix(matrix)
-	return "???"
+	rotated_matrix = Array.new(4) {Array.new(4)}
+	matrix.each_with_index do |row, ind1|
+		p ind1
+		row.each_with_index do |pixel, ind2|
+			rotated_matrix[ind2][3-ind1] = pixel
+		end
+	end 
+	rotated_matrix
 end
+p "---------------"
 p "rotate matrix"
-p rotate_matrix([[1,2,3,4],[2,3,4,5],[3,5,6,7],[8,2,3,4]])
-p rotate_matrix([[1,2,3,4],[2,3,4,5],[3,5,6,7],[8,2,3,4]])
+p rotate_matrix([[1,1,1,1],[2,2,2,2],[3,3,3,3],[4,4,4,4]])
+p rotate_matrix([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
+p "---------------"
+
 
 def zero_matrix(matrix)
 	new_matrix = Marshal.load( Marshal.dump(matrix) )
@@ -177,10 +201,13 @@ def zero_matrix(matrix)
 	return new_matrix
 end
 
+p "---------------"
 p "zero_matrix"
 p zero_matrix ([[1,2],[3,4]])
 p zero_matrix ([[1,2,0],[3,4,5]])
 p zero_matrix([[1,2,3],[4,0,6],[7,8,9]])
+p "---------------"
+
 
 def zero_matrix_in_place(matrix)
 	to_zero_col = []
@@ -206,12 +233,15 @@ def zero_matrix_in_place(matrix)
 	end
 
 	return matrix
-
 end
+
+p "---------------"
 p "zero_matrix_in_place"
 p zero_matrix_in_place ([[1,2],[3,4]])
 p zero_matrix_in_place ([[1,2,0],[3,4,5]])
 p zero_matrix_in_place ([[1,2,3],[4,0,6],[7,8,9]])
+p "---------------"
+
 
 def is_rotation?(str1, str2)
 	main_str = str1 + str1 + str1
@@ -221,6 +251,8 @@ def is_rotation?(str1, str2)
 	false
 end
 
+p "---------------"
 p "is substring"
 p is_rotation?("waterbottle", "erbottlewat")
 p is_rotation?("car", "moo")
+p "---------------"
