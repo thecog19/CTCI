@@ -131,10 +131,13 @@ puts " "
 pretty_print(sort_thingy(dupeList, 7))
 
 def sum_lists(l1, l2)
-	int1 = linked_to_i(l1) 
-	int2 = linked_to_i(l2)
+	int1 = linked_to_i(l1, 0) 
+	int2 = linked_to_i(l2, 0)
 	i_to_l(int1 + int2) 
 end
 
-def linked_to_i(li)
+def linked_to_i(li, acc)
+	acc = acc + li.value
+	return acc unless(li.next_node)
+	linked_to_i(li.next_node, acc)
 end
