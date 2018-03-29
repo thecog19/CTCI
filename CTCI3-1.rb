@@ -173,12 +173,12 @@ class CatsAndDogs
 	end
 
 	def enqueueDog(dog)
-		@dog_queue.unshit(dog)
-		@all_animals.unshit(dog)
+		@dog_queue.unshift(dog)
+		@all_animals.unshift(dog)
 	end
 	def enqueueCat(cat)
-		@cat_queue.unshit(cat)
-		@all_animals.unshit(cat)
+		@cat_queue.unshift(cat)
+		@all_animals.unshift(cat)
 	end
 
 	def dequeueCat
