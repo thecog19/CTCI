@@ -141,3 +141,4 @@ def linked_to_i(li, acc)
 	return acc unless(li.next_node)
 	linked_to_i(li.next_node, acc)
 end
+
