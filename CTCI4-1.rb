@@ -59,15 +59,11 @@ end
 #4.3
 def create_linked_lists(root)
 	#cry, cry deeply
+	h = height(root)
+    arr = []
 end
 
-def create_linked_lists(root):
-    h = height(root)
-    arr = []
-    for i in range(1, h+1):
-        arr.push(linked_list(root, i))
-    end
-end
+
 
 
 def height(node)
